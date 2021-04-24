@@ -4,7 +4,8 @@
   "description": "hacker ranking system",
   "main": "app.js",
   "scripts": {
-    "start": "env-cmd -f ./config/dev.env node app.js",
+    "start":"node app.js",
+    "dev": "env-cmd -f ./config/dev.env node app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "aloke basak",
