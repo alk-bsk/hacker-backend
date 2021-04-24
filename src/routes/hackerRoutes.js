@@ -3,7 +3,7 @@ const hackerModel=require("../models/hacker");
 const rank=require("../logic/rank");
 const app=express();
 
-app.get("/findAllhackera",async (req,res)=>{
+app.get("/findAllhacker",async (req,res)=>{
     const hacker=await hackerModel.find({}).sort({"Name":1}).then(result=>{
         try{
             res.send(result);
@@ -14,7 +14,7 @@ app.get("/findAllhackera",async (req,res)=>{
     
 });
 
-app.get("/findAllhackera/:id",async (req,res)=>{
+app.get("/findAllhacker/:id",async (req,res)=>{
     const hacker=await hackerModel.findById(req.params.id);
     try{
         res.send(hacker);
