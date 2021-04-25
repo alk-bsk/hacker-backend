@@ -7,7 +7,7 @@ app.post("/signin",async (req,res)=>{
         try{
             res.send(result);
         }catch (error){
-            res.status(500).send(error);
+            res.status(401).send(error);
         }
     });
     
@@ -21,7 +21,7 @@ app.post("/signup", async (req,res)=>{
         res.send(user);
     }catch(error){
         console.log(error)
-        res.status(500).send(error);
+        res.status(403).send(error);
     }
 })
 
