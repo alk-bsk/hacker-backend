@@ -10,9 +10,9 @@ const getRankingOrder=(hackers)=>{
         let first=findRank(a["Competitive Percentile"],a["Solutions submitted"],a["Solution accepted"]);
         let second=findRank(b["Competitive Percentile"],b["Solutions submitted"],b["Solution accepted"]);
        if(first>second){
-           return 1;
+           return -1;
        }else if(first<second){
-            return -1;
+            return 1;
        }else{
            return 0;
        }
