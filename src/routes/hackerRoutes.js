@@ -25,11 +25,15 @@ app.get("/hacker/:id",async (req,res)=>{
 
 app.get("/hackers-rank/:no",async (req,res)=>{
     let hacker=await hackerModel.find({});
-   
+    let no=req.params.no;
     try{
         if(hacker.length>0){
             let rankedHacker=await rank(hacker);
-            res.send(rankedHacker.slice(0,req.params.no));
+            if(no=="All"){
+                res.send(rankedHacker);
+            }else{
+                res.send(rankedHacker.slice(0,no));
+            }  
         }else{
             res.send([]);
         }
